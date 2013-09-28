@@ -1,10 +1,8 @@
 <!-- File: app\View\Posts\view.ctp -->
 <?php
-	//debug($this->request->params);
-	echo $this->Html->link('Posts', array('controller' => 'posts', 'action' => 'index'));
-	debug($commentList);
-	//debug($post);
+	//debug($this->request->params)
 	//debug($post['Comment']['0']['id']);
+	echo $this->element('return');
 ?>
 <h1><?php echo h($post['Post']['title']); ?></h1>
 <p><small>Created: <?php echo $post['Post']['created']; ?></small></p>
@@ -15,8 +13,7 @@
 <br/>
 <table>
 	<tr><th></th></tr>
-	<?php foreach ($post['Comment'] as $key1=>$comment) : 
-		//debug($comment); ?>
+	<?php foreach ($post['Comment'] as $key1=>$comment) : ?>
 		<tr>
 			<td>
 				<?php echo $comment['content']; ?>

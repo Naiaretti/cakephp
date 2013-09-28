@@ -1,15 +1,28 @@
 <?php
-class PostsController extends AppController {
-	public $helpers = array('Html', 'Form');
 
-	// public function beforeFilter(){
-	// 	public function constructClasses() {
-	// 		$this->post = 'My blog';
-	// 	}
+class PostsController extends AppController {
+
+	// public function beforeScaffold($index) {
+	// 	echo $this->element('return');
 	// }
+	
+	public $helpers = array('Html', 'Form');
+	public $components = array('Paginator');
+
+	public $paginate = array(
+		'limit' => 3,
+		'maxLimit' => 3,
+		'order' => array(
+			'Post.created' => 'DESC'
+		)
+	);
 
 	public function index() {
-	    $this->set('posts', $this->Post->find('all'));
+		$this->Paginator->settings = $this->paginate;
+
+		$posts = $this->Paginator->paginate('Post');
+
+	    $this->set('posts', $posts);
 	}
 
 /**
@@ -19,8 +32,7 @@ class PostsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-
-
+		
 		if (!$id) {
 			throw new NotFoundException(__('Invalid post'));
 		}
