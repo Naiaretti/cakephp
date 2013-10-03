@@ -1,6 +1,6 @@
 <?php
 	class Comment extends AppModel {
-		public $belongsTo = 'Post';
+		public $belongsTo = array('Post', 'Author');
 
 		public $validate = array(
 			'content' => array(

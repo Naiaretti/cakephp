@@ -42,6 +42,7 @@ class PostsController extends AppController {
 				'Post.id' => $id
 			),
 			'contain' => array(
+				'Tag',
 				'Comment'
 			)
 		));
@@ -49,7 +50,6 @@ class PostsController extends AppController {
 		if (!$post) {
 			throw new NotFoundException(__('Invalid post'));
 		}
-
 		$this->set(compact('post'));
 	}
 
@@ -59,23 +59,10 @@ class PostsController extends AppController {
  * @return void
  */
 	public function add() {
-		
-			// $this->request->data = array(
-			// 	'Post' => array(
-			// 		'title' => 'h',
-			// 		'body' => 'another'
-			// 	)
-			// );
-
-			// $conditions = $this->postConditions(
-			// 	$this->request->data, 
-			// 	array(
-			// 		'body' => 'LIKE'
-			// 	),null,true
-			// );
-			// $commentList = $this->Post->find('all', compact('conditions'));
-			// debug($commentList); die;
-
+		$tags = $this->Post->Tag->find('list', array(
+			'fields' => array('tag_name')
+		));
+		$this->set(compact('tags'));
 		if ($this->request->is('post')) {
 			$this->Post->create();
 			if ($this->Post->save($this->request->data)) {

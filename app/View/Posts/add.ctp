@@ -6,5 +6,6 @@ echo $this->element('return');
 echo $this->Form->create('Post');
 echo $this->Form->input('title');
 echo $this->Form->input('body', array('rows' => '13'));
+echo $this->Form->input('Tag');
 echo $this->Form->end('Save Post');
 ?>

@@ -2,8 +2,10 @@
 <?php
 	//debug($this->params);
 	echo $this->element('return');
-
+	echo $this->Html->link('Create Tags', array('controller' => 'tags', 'action' => 'add'));
 ?>
+
+<br/><br/>
 
 <h1>Blog posts</h1><!-- Author = Jennifer -->
 

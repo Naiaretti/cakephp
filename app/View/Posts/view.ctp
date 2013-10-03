@@ -10,6 +10,18 @@
 
 <hr><br/>
 
+<?php
+	$count = count($post['Tag']);
+	foreach ($post['Tag'] as $key=>$tag) {
+		$comma = '.';
+		if ($count > 1) {
+			$comma = ", ";
+		}
+		echo $tag['tag_name'] . $comma;
+		$count--;
+	}
+?>
+
 <br/>
 <table>
 	<tr><th></th></tr>
