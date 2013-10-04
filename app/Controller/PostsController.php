@@ -42,10 +42,11 @@ class PostsController extends AppController {
 				'Post.id' => $id
 			),
 			'contain' => array(
-				'Tag',
+				'TaggedPost' => array('Tag'),
 				'Comment'
 			)
 		));
+		//debug($post); die;
 
 		if (!$post) {
 			throw new NotFoundException(__('Invalid post'));
@@ -59,13 +60,21 @@ class PostsController extends AppController {
  * @return void
  */
 	public function add() {
-		$tags = $this->Post->Tag->find('list', array(
+		$tags = $this->Post->TaggedPost->Tag->find('list', array(
 			'fields' => array('tag_name')
 		));
 		$this->set(compact('tags'));
 		if ($this->request->is('post')) {
 			$this->Post->create();
 			if ($this->Post->save($this->request->data)) {
+				foreach ($this->request->data['Tag'] as $tag) {
+					$tagData = array(
+						'post_id' => $this->Post->id,
+						'tag_id' => $tag['tag_id']
+					);
+					$this->Post->TaggedPost->save($tagData);
+				}
+				$this->Post->TaggedPost->save($postTagData);
 				$this->Session->setFlash(__('Your post has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			}

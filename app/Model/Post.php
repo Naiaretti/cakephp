@@ -6,6 +6,12 @@ class Post extends AppModel{
 			'foreignKey' => 'post_id',
 			'order' => 'Comment.created DESC',
 			'dependent' => true
+		),
+		'TaggedPost' => array(
+			'className' => 'TaggedPost',
+			'foreignKey' => 'post_id',
+			'associatedForeignKey' => 'tag_id',
+			'dependent' => true
 		)
 	);
 
@@ -16,13 +22,13 @@ class Post extends AppModel{
 		)
 	);
 
-	public $hasAndBelongsToMany = array(
-		'Tag' => array(
-			'className' => 'Tag',
-			'foreignKey' => 'post_id',
-			'associationForeignKey' => 'tag_id'
-		)
-	);
+	// public $hasAndBelongsToMany = array(
+	// 	'Tag' => array(
+	// 		'className' => 'Tag',
+	// 		'foreignKey' => 'post_id',
+	// 		'associationForeignKey' => 'tag_id'
+	// 	)
+	// );
 
 	public $validate = array(
 		'title' => array(

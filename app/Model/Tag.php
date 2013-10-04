@@ -1,10 +1,18 @@
 <?php
 	class Tag extends AppModel{
-		public $hasAndBelongsToMany = array(
-			'Post' => array(
-				'className' => 'Post',
+		// public $hasAndBelongsToMany = array(
+		// 	'Post' => array(
+		// 		'className' => 'Post',
+		// 		'foreignKey' => 'tag_id',
+		// 		'associationForeignKey' => 'post_id'
+		// 	)
+		// );
+		
+		public $hasMany = array(
+			'TaggedPost' => array(
+				'className' => 'TaggedPost',
 				'foreignKey' => 'tag_id',
-				'associationForeignKey' => 'post_id'
+				'associatedForeignKey' => 'post_id'
 			)
 		);
 

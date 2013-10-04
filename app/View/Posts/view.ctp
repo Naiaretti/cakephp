@@ -2,6 +2,7 @@
 <?php
 	//debug($this->request->params)
 	//debug($post['Comment']['0']['id']);
+	debug($post);
 	echo $this->element('return');
 ?>
 <h1><?php echo h($post['Post']['title']); ?></h1>
@@ -11,13 +12,13 @@
 <hr><br/>
 
 <?php
-	$count = count($post['Tag']);
-	foreach ($post['Tag'] as $key=>$tag) {
+	$count = count($post['TaggedPost']);
+	foreach ($post['TaggedPost'] as $key=>$tag) {
 		$comma = '.';
 		if ($count > 1) {
 			$comma = ", ";
 		}
-		echo $tag['tag_name'] . $comma;
+		echo $tag['Tag']['tag_name'] . $comma;
 		$count--;
 	}
 ?>

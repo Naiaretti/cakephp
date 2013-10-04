@@ -8,5 +8,6 @@
 	echo $this->Form->create();
 	echo $this->Form->input('title');
 	echo $this->Form->input('body');
+	//echo $this->Form->input('Tag');
 	echo $this->Form->end('Save Post');
 ?>
