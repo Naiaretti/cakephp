@@ -74,7 +74,8 @@ class PostsController extends AppController {
 					);
 					$this->Post->TaggedPost->save($tagData);
 				}
-				$this->Post->TaggedPost->save($postTagData);
+				//$this->Post->TaggedPost->save($postTagData);
+				$this->Post->save($this->request->data);
 				$this->Session->setFlash(__('Your post has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			}

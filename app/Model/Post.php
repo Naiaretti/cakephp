@@ -15,13 +15,6 @@ class Post extends AppModel{
 		)
 	);
 
-	public $belongsTo = array(
-		'Author' => array(
-			'className' => 'Author',
-			'foreignKey' => 'author_id'
-		)
-	);
-
 	// public $hasAndBelongsToMany = array(
 	// 	'Tag' => array(
 	// 		'className' => 'Tag',
