@@ -36,7 +36,8 @@ class PostsController extends AppController {
 		if (!$id) {
 			throw new NotFoundException(__('Invalid post'));
 		}
-
+		$test = $this->Post->find('first', array('conditions' => array('Post.id' => $id), 'recursive' => -1));
+		debug($test);
 		$post = $this->Post->find('first', array(
 			'conditions' => array(
 				'Post.id' => $id
@@ -72,9 +73,9 @@ class PostsController extends AppController {
 						'post_id' => $this->Post->id,
 						'tag_id' => $tag['tag_id']
 					);
+					$this->Post->TaggedPost->create();
 					$this->Post->TaggedPost->save($tagData);
 				}
-				$this->Post->TaggedPost->save($postTagData);
 				$this->Session->setFlash(__('Your post has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			}
