@@ -36,6 +36,8 @@ class PostsController extends AppController {
 		if (!$id) {
 			throw new NotFoundException(__('Invalid post'));
 		}
+		$test = $this->Post->find('first', array('order' => array('Post.created' => 'DESC')));
+		debug($test);
 
 		$post = $this->Post->find('first', array(
 			'conditions' => array(

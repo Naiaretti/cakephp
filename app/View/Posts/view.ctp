@@ -2,7 +2,7 @@
 <?php
 	//debug($this->request->params)
 	//debug($post['Comment']['0']['id']);
-	debug($post);
+	//debug($post);
 	echo $this->element('return');
 ?>
 <h1><?php echo h($post['Post']['title']); ?></h1>
