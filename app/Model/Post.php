@@ -33,5 +33,17 @@ class Post extends AppModel{
 			'message' => 'body cannot be empty'
 		)
 	);
+
+	public function afterSave($created) {
+		if ($created) {
+			$result = $this->find('first', array('conditions' => array('id' => $this->id)));
+			$toSave = array(
+				'foreign_key' => $this->id,
+				'model' => $this->alias
+			);
+			// debug($toSave); die;
+			ClassRegistry::init('PostSummary')->save($toSave);
+		}
+	}
 }
 ?>

@@ -18,11 +18,13 @@ class PostsController extends AppController {
 	);
 
 	public function index() {
+		$totalPosts = $this->Post->find('count');
+
 		$this->Paginator->settings = $this->paginate;
 
 		$posts = $this->Paginator->paginate('Post');
 
-	    $this->set('posts', $posts);
+	    $this->set(compact('posts', 'totalPosts'));
 	}
 
 /**
@@ -37,7 +39,7 @@ class PostsController extends AppController {
 			throw new NotFoundException(__('Invalid post'));
 		}
 		$test = $this->Post->find('first', array('order' => array('Post.created' => 'DESC')));
-		debug($test);
+		$commented = $this->Post->Comment->getTotalComments($id);
 
 		$post = $this->Post->find('first', array(
 			'conditions' => array(
@@ -53,7 +55,7 @@ class PostsController extends AppController {
 		if (!$post) {
 			throw new NotFoundException(__('Invalid post'));
 		}
-		$this->set(compact('post'));
+		$this->set(compact('post', 'commented'));
 	}
 
 /**
@@ -76,7 +78,6 @@ class PostsController extends AppController {
 					);
 					$this->Post->TaggedPost->save($tagData);
 				}
-				$this->Post->TaggedPost->save($postTagData);
 				$this->Session->setFlash(__('Your post has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			}
