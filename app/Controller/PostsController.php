@@ -38,8 +38,8 @@ class PostsController extends AppController {
 		if (!$id) {
 			throw new NotFoundException(__('Invalid post'));
 		}
-		$test = $this->Post->find('first', array('order' => array('Post.created' => 'DESC')));
-		$commented = $this->Post->Comment->getTotalComments($id);
+		// $test = $this->Post->find('first', array('order' => array('Post.created' => 'DESC')));
+		// $commented = $this->Post->Comment->getTotalComments($id);
 
 		$post = $this->Post->find('first', array(
 			'conditions' => array(
@@ -67,6 +67,7 @@ class PostsController extends AppController {
 		$tags = $this->Post->TaggedPost->Tag->find('list', array(
 			'fields' => array('tag_name')
 		));
+		// debug($tags);
 		$this->set(compact('tags'));
 		if ($this->request->is('post')) {
 			$this->Post->create();
@@ -127,7 +128,7 @@ class PostsController extends AppController {
 		if ($this->request->is('get')) {
 			throw new MethodNotAllowedException();
 		}
-
+		// debug($this->request->data); die;
 		if ($this->Post->delete($id)) {
 			$this->Session->setFlash(__('The post with id: %s has been deleted.', h($id)));
 			return $this->redirect(array('action' => 'index'));

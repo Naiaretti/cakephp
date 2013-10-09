@@ -26,10 +26,12 @@ class CommentsController extends AppController {
 				'Post.id' => $this->request->data['Comment']['post_id']
 			),
 			'contain' => array(
-				'Comment'
+				'Comment',
+				'TaggedPost'
 			)
 		));
 		$this->set(compact('post'));
+		$this->request->data = null;
 		$this->render('/posts/view/');
 	}
 
@@ -50,7 +52,7 @@ class CommentsController extends AppController {
 		if ($this->Comment->delete($id)) {
 			$this->Session->setFlash(__('The comment has been deleted.'));
 		}
-		$this->redirect($this->referer());
+		$this->redirect(array('controller' => 'posts', 'action' => 'view/' . $postId));
 	}
 }
 ?>
