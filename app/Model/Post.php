@@ -1,5 +1,14 @@
 <?php
 class Post extends AppModel{
+	public $deleteFailed = "";
+
+	public $actsAs = array(
+		'Summary' => array(
+			'something' => 'passed to behavior',
+			'you_can_make_some_default_settings' => true
+		)
+	); 
+
 	public $hasMany = array(
 		'Comment' => array(
 			'className' => 'Comment',
@@ -33,39 +42,5 @@ class Post extends AppModel{
 			'message' => 'body cannot be empty'
 		)
 	);
-
-	public function afterSave($created) {
-		if ($created) {
-			$result = $this->find('first', array('conditions' => array('id' => $this->id)));
-			$toSave = array(
-				'foreign_key' => $this->id,
-				'model' => $this->alias
-			);
-			// debug($toSave); die;
-			ClassRegistry::init('PostSummary')->save($toSave);
-		}
-	}
-
-	// public function beforeDelete($cascade = true) {
-	// 	$
-	// 	debug($this->id); die;
-	// 	return true;
-	// }
-
-	public function afterDelete() {
-		//find the record that has same foreign_key as $this->id in post_summaries
-		$PostSummary = ClassRegistry::init('PostSummary');
-		//now we can re-use PostSummary many times without writing classregistry all over again ;)
-		$deletedId = $PostSummary->find('first', array(
-			'conditions' => array(
-				'foreign_key' => $this->id, 
-				'model' => $this->alias
-			),
-			'fields' => array('PostSummary.id')
-		));
-		if ($deletedId) {
-			$PostSummary->delete($deletedId['PostSummary']['id']);
-		}
-	}
 }
 ?>

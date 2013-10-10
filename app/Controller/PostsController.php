@@ -133,6 +133,9 @@ class PostsController extends AppController {
 			$this->Session->setFlash(__('The post with id: %s has been deleted.', h($id)));
 			return $this->redirect(array('action' => 'index'));
 		}
+		echo $this->Session->flash($this->Post->deleteFailed, 'posts/index', $pause = 3, $layout = 'flash');
+		// echo $this->Post->deleteFailed;
+		// return $this->redirect(array('action'->'index'));
 	}
 }
 ?>

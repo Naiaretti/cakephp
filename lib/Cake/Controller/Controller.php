@@ -998,7 +998,7 @@ class Controller extends Object implements CakeEventListener {
  * @deprecated Will be removed in 3.0. Use Session::setFlash().
  */
 	public function flash($message, $url, $pause = 1, $layout = 'flash') {
-		$this->autoRender = false;
+		$this->autoRender = true;
 		$this->set('url', Router::url($url));
 		$this->set('message', $message);
 		$this->set('pause', $pause);
