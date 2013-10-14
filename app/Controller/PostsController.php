@@ -50,7 +50,6 @@ class PostsController extends AppController {
 				'Comment'
 			)
 		));
-		//debug($post); die;
 
 		if (!$post) {
 			throw new NotFoundException(__('Invalid post'));
@@ -65,9 +64,9 @@ class PostsController extends AppController {
  */
 	public function add() {
 		$tags = $this->Post->TaggedPost->Tag->find('list', array(
-			'fields' => array('tag_name')
+			'fields' => array('label')
 		));
-		// debug($tags);
+		debug($tags);
 		$this->set(compact('tags'));
 		if ($this->request->is('post')) {
 			$this->Post->create();
@@ -124,7 +123,7 @@ class PostsController extends AppController {
  * @param  integer $id
  * @return void
  */
-	public function delete($id){
+	public function delete($id) {
 		if ($this->request->is('get')) {
 			throw new MethodNotAllowedException();
 		}
@@ -133,7 +132,7 @@ class PostsController extends AppController {
 			$this->Session->setFlash(__('The post with id: %s has been deleted.', h($id)));
 			return $this->redirect(array('action' => 'index'));
 		}
-		echo $this->Session->flash($this->Post->deleteFailed, 'posts/index', $pause = 3, $layout = 'flash');
+		echo $this->flash($this->Post->deleteFailed, 'posts/index', $pause = 3, $layout = 'flash');
 		// echo $this->Post->deleteFailed;
 		// return $this->redirect(array('action'->'index'));
 	}

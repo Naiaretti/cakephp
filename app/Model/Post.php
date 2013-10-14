@@ -1,5 +1,6 @@
 <?php
 class Post extends AppModel{
+	public $recursive = -1;
 	public $deleteFailed = "";
 
 	public $actsAs = array(
