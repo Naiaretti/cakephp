@@ -18,6 +18,27 @@ class PostsController extends AppController {
 	);
 
 	public function index() {
+		// 
+		debug($this->Post->associations());
+
+		//
+		debug("Exists = " . $this->Post->exists('523d6217-e30c-4aaa-95dd-2320307f6222'));
+
+		// Get all models with which this model is associated with based on the type of association passed in as the parameter
+		debug($this->Post->getAssociated('hasMany'));
+
+		// Check if a field / virtual field exists
+		debug($this->Post->hasField('postLabel', true));
+
+		// Check if a field is virtual or not
+		debug($this->Post->isVirtualField('title'));
+
+		// Get all virtual fields in the Post model
+		debug($this->Post->getVirtualField());
+
+		// View virtual fields through the find()
+		debug($this->Post->find('first'));
+
 		$totalPosts = $this->Post->find('count');
 
 		$this->Paginator->settings = $this->paginate;
@@ -36,8 +57,13 @@ class PostsController extends AppController {
 	public function view($id = null) {
 		
 		if (!$id) {
-			throw new NotFoundException(__('Invalid post'));
+			throw new CakeException(__('Missing Arguements'));
 		}
+
+		if (!$this->Post->exists($id)) {
+			throw new NotFoundException(__('Id Not Found'));
+		}
+
 		// $test = $this->Post->find('first', array('order' => array('Post.created' => 'DESC')));
 		// $commented = $this->Post->Comment->getTotalComments($id);
 
@@ -50,10 +76,6 @@ class PostsController extends AppController {
 				'Comment'
 			)
 		));
-
-		if (!$post) {
-			throw new NotFoundException(__('Invalid post'));
-		}
 		$this->set(compact('post', 'commented'));
 	}
 

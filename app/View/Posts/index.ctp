@@ -24,7 +24,7 @@
 	<tr>
 		<!-- <td><?php //echo $post['Post']['id']; ?></td> -->
 		<td>
-			<?php echo $post['Post']['title']; ?>
+			<?php echo $post['Post']['postLabel']; ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link('Edit', array('action' => 'edit', $post['Post']['id'])); ?>

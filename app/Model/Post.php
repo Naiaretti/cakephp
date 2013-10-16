@@ -1,5 +1,10 @@
 <?php
 class Post extends AppModel{
+	// $dataSource = $this->getDataSource();
+
+	public $virtualFields = array(
+		'postLabel' => "CONCAT(Post.id, ' ', Post.title)"
+	);	
 	public $recursive = -1;
 	public $deleteFailed = "";
 
@@ -8,7 +13,7 @@ class Post extends AppModel{
 			'something' => 'passed to behavior',
 			'you_can_make_some_default_settings' => true
 		)
-	); 
+	);
 
 	public $hasMany = array(
 		'Comment' => array(
