@@ -1,7 +1,5 @@
 <?php
 class Post extends AppModel{
-	// $dataSource = $this->getDataSource();
-
 	public $virtualFields = array(
 		'postLabel' => "CONCAT(Post.id, ' ', Post.title)"
 	);	
@@ -20,7 +18,6 @@ class Post extends AppModel{
 			'className' => 'Comment',
 			'foreignKey' => 'post_id',
 			'order' => 'Comment.created DESC',
-			'dependent' => true
 		),
 		'TaggedPost' => array(
 			'className' => 'TaggedPost',
@@ -48,5 +45,66 @@ class Post extends AppModel{
 			'message' => 'body cannot be empty'
 		)
 	);
+
+	public function transactions($id = null) {
+		$dataSource = $this->getDataSource();
+		$success = true;
+		$dataSource->begin();
+
+		$result = $this->delete($id);
+		if (!$result) {
+			$success = false;
+		}
+
+		$comments = $this->Comment->find('all', array(
+			'conditions' => array('Comment.post_id' => $id)
+		));
+		
+		$Summary = ClassRegistry::init('PostSummary');
+		foreach ($comments as $comment) {
+			// check if this comment exists in the postSUmmary table and delete it
+			
+			$postSummaryId = $Summary->find('first', array(
+				'conditions' => array(
+					'PostSummary.foreign_key' => $comment['Comment']['id'],
+					'PostSummary.model' => $this->Comment->alias
+				),
+				'fields' => array(
+					'PostSummary.id'
+				)
+			));
+			if ($postSummaryId) {
+				$deleteSummary = $Summary->delete($postSummaryId['PostSummary']['id']);
+				if (!$deleteSummary) {
+					$success = false;
+				}
+			}
+			// check if delete was not sucessful, then rollback
+			$deleted = $this->Comment->delete($comment['Comment']['id']);
+			if (!$deleted) {
+				$success = false;
+			}
+		}
+
+		$summaries = $Summary->find('first', array(
+			'conditions' => array(
+				'PostSummary.foreign_key' => $id,
+				'PostSummary.model' => $this->alias
+			),
+			'fields' => array(
+				'PostSummary.id'
+			)
+		)); debug($summaries); die;
+		// debug($id); die;
+		$delete = $Summary->delete($summaries['PostSummary']['id']);
+		if (!$delete) {
+			$success = false;
+			debug('success = false'); die;
+		}
+		if (!$success) {
+			$dataSource->rollback();
+		}
+		$dataSource->commit();
+	}
 }
 ?>

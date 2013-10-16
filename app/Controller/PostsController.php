@@ -19,25 +19,34 @@ class PostsController extends AppController {
 
 	public function index() {
 		// 
-		debug($this->Post->associations());
+		// debug($this->Post->associations());
 
 		//
-		debug("Exists = " . $this->Post->exists('523d6217-e30c-4aaa-95dd-2320307f6222'));
+		// debug("Exists = " . $this->Post->exists('523d6217-e30c-4aaa-95dd-2320307f6222'));
 
 		// Get all models with which this model is associated with based on the type of association passed in as the parameter
-		debug($this->Post->getAssociated('hasMany'));
+		// debug($this->Post->getAssociated('hasMany'));
 
 		// Check if a field / virtual field exists
-		debug($this->Post->hasField('postLabel', true));
+		// debug($this->Post->hasField('postLabel', true));
+
+		// debug($this->Post->find('first', array(
+		// 	'conditions' => array(
+		// 		'Post.id' => '523d6217-e30c-4aaa-95dd-2320307f6222'
+		// 	),
+		// 	'fields' => array(
+		// 		'Post.id'
+		// 	)
+		// )));
 
 		// Check if a field is virtual or not
-		debug($this->Post->isVirtualField('title'));
+		// debug($this->Post->isVirtualField('title'));
 
 		// Get all virtual fields in the Post model
-		debug($this->Post->getVirtualField());
+		// debug($this->Post->getVirtualField());
 
 		// View virtual fields through the find()
-		debug($this->Post->find('first'));
+		// debug($this->Post->find('first'));
 
 		$totalPosts = $this->Post->find('count');
 
@@ -88,7 +97,7 @@ class PostsController extends AppController {
 		$tags = $this->Post->TaggedPost->Tag->find('list', array(
 			'fields' => array('label')
 		));
-		debug($tags);
+		// debug($tags);
 		$this->set(compact('tags'));
 		if ($this->request->is('post')) {
 			$this->Post->create();
@@ -150,11 +159,18 @@ class PostsController extends AppController {
 			throw new MethodNotAllowedException();
 		}
 		// debug($this->request->data); die;
-		if ($this->Post->delete($id)) {
-			$this->Session->setFlash(__('The post with id: %s has been deleted.', h($id)));
-			return $this->redirect(array('action' => 'index'));
+		if (!$this->Post->exists($id)) {
+			throw new CakeException('Id does not exist');
 		}
-		echo $this->flash($this->Post->deleteFailed, 'posts/index', $pause = 3, $layout = 'flash');
+		
+		$this->Post->transactions($id);
+		return $this->redirect(array('action' => 'index'));
+
+		// if ($this->Post->delete($id)) {
+		// 	$this->Session->setFlash(__('The post with id: %s has been deleted.', h($id)));
+		// 	return $this->redirect(array('action' => 'index'));
+		// }
+		// echo $this->flash($this->Post->deleteFailed, 'posts/index', $pause = 3, $layout = 'flash');
 		// echo $this->Post->deleteFailed;
 		// return $this->redirect(array('action'->'index'));
 	}

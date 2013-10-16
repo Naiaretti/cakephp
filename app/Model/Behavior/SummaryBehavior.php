@@ -1,7 +1,7 @@
 <?php
 class SummaryBehavior extends ModelBehavior {
 	public function setUp(Model $Model, $config = array()) {
-		debug($Model->alias); //guess what? = Post good
+		// debug($Model->alias); //guess what? = Post good
 	}
 /**
  * afterSave takes the id and model name of recently saved record and saves them into the post_summaries table
@@ -25,23 +25,23 @@ class SummaryBehavior extends ModelBehavior {
 		}
 	}
 
-	public function beforeDelete(Model $Model, $cascade = true) {
-		$PostSummary = ClassRegistry::init('PostSummary');
+	// public function beforeDelete(Model $Model, $cascade = true) {
+	// 	$PostSummary = ClassRegistry::init('PostSummary');
 
-		$hasSummaryRecord = $PostSummary->find('first', array(
-			'conditions' => array(
-				'foreign_key' => $Model->id,
-				'model' => $Model->alias
-			),
-			'fields' => array('PostSummary.id')
-		));
+	// 	$hasSummaryRecord = $PostSummary->find('first', array(
+	// 		'conditions' => array(
+	// 			'foreign_key' => $Model->id,
+	// 			'model' => $Model->alias
+	// 		),
+	// 		'fields' => array('PostSummary.id')
+	// 	));
 
-		if($hasSummaryRecord != null) {
-			$Model->deleteFailed = "You cannot delete this post because it already has a summary record.";
-			return false;
-		}
-		return true;
-	}
+	// 	if($hasSummaryRecord != null) {
+	// 		$Model->deleteFailed = "You cannot delete this post because it already has a summary record.";
+	// 		return false;
+	// 	}
+	// 	return true;
+	// }
 
 /**
  * afterDelete gets the id and model name of recently deleted record plus the id of the row in post_summaries table where they are saved in,

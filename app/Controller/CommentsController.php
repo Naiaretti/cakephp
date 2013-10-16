@@ -41,6 +41,7 @@ class CommentsController extends AppController {
 
 /**
  * delete method
+ * 
  * @param String $id
  * @return void
  */
