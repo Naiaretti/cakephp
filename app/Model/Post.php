@@ -15,6 +15,17 @@ class Post extends AppModel{
 		)
 	);
 
+		public $validate = array(
+		'title' => array(
+			'rule' => 'notEmpty',
+			'message' => 'please enter title'
+		),
+		'body' => array(
+			'rule' => 'notEmpty',
+			'message' => 'body cannot be empty'
+		)
+	);
+
 	// public $belongsTo = array(
 	// 	'Author' => array(
 	// 		'className' => 'Author',
@@ -29,16 +40,5 @@ class Post extends AppModel{
 	// 		'associationForeignKey' => 'tag_id'
 	// 	)
 	// );
-
-	public $validate = array(
-		'title' => array(
-			'rule' => 'notEmpty',
-			'message' => 'please enter title'
-		),
-		'body' => array(
-			'rule' => 'notEmpty',
-			'message' => 'body cannot be empty'
-		)
-	);
 }
 ?>
