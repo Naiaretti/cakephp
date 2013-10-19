@@ -10,6 +10,8 @@
 <h1>Blog posts</h1><!-- Author = Jennifer -->
 
 <p><?php echo $this->Html->link('Add Post', array('action' => 'add')); ?></p>
+<p><?php echo "You have a total of <b>" . $totalPosts . "</b> posts!"; ?></p>
+<!-- <p><?php //echo $commented; ?></p> -->
 
 <table>
 	<tr>
@@ -22,7 +24,7 @@
 	<tr>
 		<!-- <td><?php //echo $post['Post']['id']; ?></td> -->
 		<td>
-			<?php echo $post['Post']['title']; ?>
+			<?php echo $post['Post']['postLabel']; ?>
 		</td>
 		<td>
 			<?php echo $this->Html->link('Edit', array('action' => 'edit', $post['Post']['id'])); ?>

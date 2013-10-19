@@ -1,0 +1,105 @@
+2013-10-18 17:06:01 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/apps/blogapp/webroot/index.php(92): include('/private/var/ww...')
+#6 {main}
+2013-10-18 17:10:10 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(132): require('/private/var/ww...')
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(100): ShellDispatcher->_bootstrap()
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(56): ShellDispatcher->_initEnvironment()
+#8 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(67): ShellDispatcher->__construct(Array)
+#9 /private/var/www/frameworks/cakephp/lib/Cake/Console/cake.php(51): ShellDispatcher::run(Array)
+#10 {main}
+2013-10-18 17:11:10 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(132): require('/private/var/ww...')
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(100): ShellDispatcher->_bootstrap()
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(56): ShellDispatcher->_initEnvironment()
+#8 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(67): ShellDispatcher->__construct(Array)
+#9 /private/var/www/frameworks/cakephp/lib/Cake/Console/cake.php(51): ShellDispatcher::run(Array)
+#10 {main}
+2013-10-18 17:11:59 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(132): require('/private/var/ww...')
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(100): ShellDispatcher->_bootstrap()
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(56): ShellDispatcher->_initEnvironment()
+#8 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(67): ShellDispatcher->__construct(Array)
+#9 /private/var/www/frameworks/cakephp/lib/Cake/Console/cake.php(51): ShellDispatcher::run(Array)
+#10 {main}
+2013-10-18 17:13:09 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/apps/blogapp/webroot/index.php(92): include('/private/var/ww...')
+#6 {main}
+2013-10-18 17:25:14 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/apps/blogapp/webroot/index.php(92): include('/private/var/ww...')
+#6 {main}
+2013-10-18 17:25:43 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(132): require('/private/var/ww...')
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(100): ShellDispatcher->_bootstrap()
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(56): ShellDispatcher->_initEnvironment()
+#8 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(67): ShellDispatcher->__construct(Array)
+#9 /private/var/www/frameworks/cakephp/lib/Cake/Console/cake.php(51): ShellDispatcher::run(Array)
+#10 {main}
+2013-10-18 17:32:12 Error: [MissingPluginException] Plugin BoostCake could not be found.
+Exception Attributes: array (
+  'plugin' => 'BoostCake',
+)
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Core/CakePlugin.php(74): CakePlugin::load('BoostCake', Array)
+#1 /private/var/www/apps/blogapp/Config/bootstrap.php(77): CakePlugin::load(Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(132): require('/private/var/ww...')
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(100): ShellDispatcher->_bootstrap()
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(56): ShellDispatcher->_initEnvironment()
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Console/ShellDispatcher.php(67): ShellDispatcher->__construct(Array)
+#8 /private/var/www/frameworks/cakephp/lib/Cake/Console/cake.php(51): ShellDispatcher::run(Array)
+#9 {main}
+2013-10-18 17:32:19 Error: [MissingPluginException] Plugin BoostCake could not be found.
+Exception Attributes: array (
+  'plugin' => 'BoostCake',
+)
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Core/CakePlugin.php(74): CakePlugin::load('BoostCake', Array)
+#1 /private/var/www/apps/blogapp/Config/bootstrap.php(77): CakePlugin::load(Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#4 /private/var/www/apps/blogapp/webroot/index.php(92): include('/private/var/ww...')
+#5 {main}

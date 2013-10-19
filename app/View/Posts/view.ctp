@@ -2,7 +2,11 @@
 <?php
 	//debug($this->request->params)
 	//debug($post['Comment']['0']['id']);
+<<<<<<< HEAD
 	// debug($post);
+=======
+	//debug($post);
+>>>>>>> 0862a68322ea0e37df367789c5b987eca1a7912a
 	echo $this->element('return');
 ?>
 <h1><?php echo h($post['Post']['title']); ?></h1>

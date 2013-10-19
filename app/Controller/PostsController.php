@@ -18,6 +18,39 @@ class PostsController extends AppController {
 	);
 
 	public function index() {
+<<<<<<< HEAD
+=======
+		// 
+		// debug($this->Post->associations());
+
+		//
+		// debug("Exists = " . $this->Post->exists('523d6217-e30c-4aaa-95dd-2320307f6222'));
+
+		// Get all models with which this model is associated with based on the type of association passed in as the parameter
+		// debug($this->Post->getAssociated('hasMany'));
+
+		// Check if a field / virtual field exists
+		// debug($this->Post->hasField('postLabel', true));
+
+		// debug($this->Post->find('first', array(
+		// 	'conditions' => array(
+		// 		'Post.id' => '523d6217-e30c-4aaa-95dd-2320307f6222'
+		// 	),
+		// 	'fields' => array(
+		// 		'Post.id'
+		// 	)
+		// )));
+
+		// Check if a field is virtual or not
+		// debug($this->Post->isVirtualField('title'));
+
+		// Get all virtual fields in the Post model
+		// debug($this->Post->getVirtualField());
+
+		// View virtual fields through the find()
+		// debug($this->Post->find('first'));
+
+>>>>>>> 0862a68322ea0e37df367789c5b987eca1a7912a
 		$totalPosts = $this->Post->find('count');
 
 		$this->Paginator->settings = $this->paginate;
@@ -36,13 +69,21 @@ class PostsController extends AppController {
 	public function view($id = null) {
 		
 		if (!$id) {
-			throw new NotFoundException(__('Invalid post'));
+			throw new CakeException(__('Missing Arguements'));
 		}
 
+<<<<<<< HEAD
 		// $test = $this->Post->find('first', array('conditions' => array('Post.id' => $id), 'recursive' => -1));
 		// debug($test);
 
 		// $testTwo = $this->Post->find('first', array('order' => array('Post.created' => 'DESC')));
+=======
+		if (!$this->Post->exists($id)) {
+			throw new NotFoundException(__('Id Not Found'));
+		}
+
+		// $test = $this->Post->find('first', array('order' => array('Post.created' => 'DESC')));
+>>>>>>> 0862a68322ea0e37df367789c5b987eca1a7912a
 		// $commented = $this->Post->Comment->getTotalComments($id);
 
 		$post = $this->Post->find('first', array(
@@ -54,11 +95,14 @@ class PostsController extends AppController {
 				'Comment'
 			)
 		));
+<<<<<<< HEAD
 		//debug($post); die;
 
 		if (!$post) {
 			throw new NotFoundException(__('Invalid post'));
 		}
+=======
+>>>>>>> 0862a68322ea0e37df367789c5b987eca1a7912a
 		$this->set(compact('post', 'commented'));
 	}
 
@@ -69,7 +113,7 @@ class PostsController extends AppController {
  */
 	public function add() {
 		$tags = $this->Post->TaggedPost->Tag->find('list', array(
-			'fields' => array('tag_name')
+			'fields' => array('label')
 		));
 		// debug($tags);
 		$this->set(compact('tags'));
@@ -129,15 +173,31 @@ class PostsController extends AppController {
  * @param  integer $id
  * @return void
  */
-	public function delete($id){
+	public function delete($id) {
 		if ($this->request->is('get')) {
 			throw new MethodNotAllowedException();
 		}
 		// debug($this->request->data); die;
+<<<<<<< HEAD
 		if ($this->Post->delete($id)) {
 			$this->Session->setFlash(__('The post with id: %s has been deleted.', h($id)));
 			return $this->redirect(array('action' => 'index'));
+=======
+		if (!$this->Post->exists($id)) {
+			throw new CakeException('Id does not exist');
+>>>>>>> 0862a68322ea0e37df367789c5b987eca1a7912a
 		}
+		
+		$this->Post->transactions($id);
+		return $this->redirect(array('action' => 'index'));
+
+		// if ($this->Post->delete($id)) {
+		// 	$this->Session->setFlash(__('The post with id: %s has been deleted.', h($id)));
+		// 	return $this->redirect(array('action' => 'index'));
+		// }
+		// echo $this->flash($this->Post->deleteFailed, 'posts/index', $pause = 3, $layout = 'flash');
+		// echo $this->Post->deleteFailed;
+		// return $this->redirect(array('action'->'index'));
 	}
 }
 ?>
