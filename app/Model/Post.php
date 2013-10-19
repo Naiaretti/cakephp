@@ -47,14 +47,13 @@ class Post extends AppModel{
 		)
 	);
 
-<<<<<<< HEAD
 	// public $belongsTo = array(
 	// 	'Author' => array(
 	// 		'className' => 'Author',
 	// 		'foreignKey' => 'author_id'
 	// 	)
 	// );
-=======
+
 	public function transactions($id = null) {
 		$dataSource = $this->getDataSource();
 		$success = true;
@@ -116,5 +115,4 @@ class Post extends AppModel{
 		$dataSource->commit();
 	}
 }
->>>>>>> 0862a68322ea0e37df367789c5b987eca1a7912a
 ?>
