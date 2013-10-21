@@ -17,12 +17,36 @@ class PostsController extends AppController {
 		)
 	);
 
+	// lines 21 - 37 is a test of the array merge 'am' function.
 	public function index() {
+		// debug(convertSlash('I_ want to/ see how this/works._'), $showFrom = false);
+		$one = array(
+			'one1' => 'first',
+			'one2' => 'second',
+			'one3' => 'third'
+		);
+		$two = array(
+			'two1' => 'fourth',
+			'two2' => 'fifth',
+			'two3' => 'sixth'
+		);
+		$three = array(
+			'three1' => 'seventh',
+			'three2' => 'eighth',
+			'three3' => 'nineth'
+		);
+		pr(am($one, $two, $three), $showHtml = null, $showFrom = true);
+
+		$totalPosts = $this->Post->find('count');
+		// $num = 24;
+		// $loc = "Warwickshire";
+		// $mes = "Jennifer is %s years old and lives in %s.";
+		// debug(sprintf($mes, $num, $loc)); die;
 		$this->Paginator->settings = $this->paginate;
 
 		$posts = $this->Paginator->paginate('Post');
 
-	    $this->set('posts', $posts);
+	    $this->set(compact('posts', 'totalPosts'));
 	}
 
 /**
@@ -32,12 +56,12 @@ class PostsController extends AppController {
  * @return void
  */
 	public function view($id = null) {
-		
+
 		if (!$id) {
 			throw new NotFoundException(__('Invalid post'));
 		}
-		$test = $this->Post->find('first', array('conditions' => array('Post.id' => $id), 'recursive' => -1));
-		debug($test);
+		// $test = $this->Post->find('first', array('conditions' => array('Post.id' => $id), 'recursive' => -1));
+		// debug($test);
 		$post = $this->Post->find('first', array(
 			'conditions' => array(
 				'Post.id' => $id
@@ -66,6 +90,7 @@ class PostsController extends AppController {
 		));
 		$this->set(compact('tags'));
 		if ($this->request->is('post')) {
+			//debug($this->request->data['Tag']); die;
 			$this->Post->create();
 			if ($this->Post->save($this->request->data)) {
 				foreach ($this->request->data['Tag'] as $tag) {

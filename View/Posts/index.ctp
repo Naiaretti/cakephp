@@ -7,7 +7,7 @@
 
 <br/><br/>
 
-<h1>Blog posts</h1><!-- Author = Jennifer -->
+<h1>Blog posts (Total of <b><?php echo $totalPosts . " " . __dcn('Post', 'Post', 'Posts', $totalPosts, 4); ?></b>)</h1><!-- Using the __dcn() function to echo 'Post' if the count is 1 and 'Posts' if it is more. __dn() would be the same except for the category which would not be there. __n() still does the same thing, except that a domain (ie model name) and category would not need to be specified. -->
 
 <p><?php echo $this->Html->link('Add Post', array('action' => 'add')); ?></p>
 
