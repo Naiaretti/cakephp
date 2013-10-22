@@ -1,7 +1,6 @@
 <h1>Edit Post</h1>
 <?php
 	//debug($this->request->params);
-	//debug($this->request['posts']);
 	//debug($this->params);
 	echo $this->element('return');
 

@@ -35,7 +35,7 @@ class Post extends AppModel{
 	// 	)
 	// );
 
-		public $validate = array(
+	public $validate = array(
 		'title' => array(
 			'rule' => 'notEmpty',
 			'message' => 'please enter title'
@@ -52,6 +52,21 @@ class Post extends AppModel{
 	// 		'foreignKey' => 'author_id'
 	// 	)
 	// );
+
+	public function saveTags($data, $id) {
+		$this->create();
+		$this->save($data);
+		if ($this->save($data)) {
+			foreach ($data['Tag'] as $tag) {
+				$tagData = array(
+					'post_id' => $this->id,
+					'tag_id' => $tag['tag_id']
+				);
+				$this->TaggedPost->create();
+				$this->TaggedPost->save($tagData);
+			}
+		}
+	}
 
 	public function transactions($id = null) {
 		$dataSource = $this->getDataSource();

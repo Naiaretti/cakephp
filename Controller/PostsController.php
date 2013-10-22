@@ -19,23 +19,23 @@ class PostsController extends AppController {
 
 	// lines 21 - 37 is a test of the array merge 'am' function.
 	public function index() {
-		debug(convertSlash('/I want to/ see how this/works./'));
-		$one = array(
-			'one1' => 'first',
-			'one2' => 'second',
-			'one3' => 'third'
-		);
-		$two = array(
-			'two1' => 'fourth',
-			'two2' => 'fifth',
-			'two3' => 'sixth'
-		);
-		$three = array(
-			'three1' => 'seventh',
-			'three2' => 'eighth',
-			'three3' => 'nineth'
-		);
-		pr(am($one, $two, $three), $showHtml = null, $showFrom = true);
+		// debug(convertSlash('/I want to/ see how this/works./'));
+		// $one = array(
+		// 	'one1' => 'first',
+		// 	'one2' => 'second',
+		// 	'one3' => 'third'
+		// );
+		// $two = array(
+		// 	'two1' => 'fourth',
+		// 	'two2' => 'fifth',
+		// 	'two3' => 'sixth'
+		// );
+		// $three = array(
+		// 	'three1' => 'seventh',
+		// 	'three2' => 'eighth',
+		// 	'three3' => 'nineth'
+		// );
+		// pr(am($one, $two, $three), $showHtml = null, $showFrom = true);
 
 		// debug($this->Post->associations());
 
@@ -120,20 +120,12 @@ class PostsController extends AppController {
 		));
 		$this->set(compact('tags'));
 		if ($this->request->is('post')) {
-			$this->Post->create();
-			if ($this->Post->save($this->request->data)) {
-				foreach ($this->request->data['Tag'] as $tag) {
-					$tagData = array(
-						'post_id' => $this->Post->id,
-						'tag_id' => $tag['tag_id']
-					);
-					$this->Post->TaggedPost->create();
-					debug($this->Post->TaggedPost->save($tagData)); die;
-				}
-				$this->Session->setFlash(__('Your post has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+			// debug($this->request->data); die;
+			if (!$this->Post->saveTags($this->request->data)) {
+				$this->Session->setFlash(__('Unable to add your post.'));
 			}
-			$this->Session-setFlash(__('Unable to add your post.'));
+			$this->Session->setFlash(__('Your post has been saved.'));
+			return $this->redirect(array('action' => 'index'));
 		}
 	}
 
@@ -145,13 +137,14 @@ class PostsController extends AppController {
  */
 	public function edit($id = null) {
 		if (!$id) {
-			throw new NotFoundException(__('Invalid post'));
+			throw new CakeException(__('No ID found.'));
 		}
 
 		$post = $this->Post->findById($id);
+		// debug($post);
 		
 		if (!$post) {
-			throw new NotFoundException(__('Invalid post'));
+			throw new NotFoundException(__('This post does not exist. It may have been deleted.'));
 		}
 
 		$this->Post->id = $id;
