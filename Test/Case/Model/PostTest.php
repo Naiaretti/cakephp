@@ -1,6 +1,7 @@
 <?php
 App::uses('Post', 'Model');
 App::uses('TaggecPost', 'Model');
+App::uses('Hash', 'Utility');
 
 /**
  * Post Test Case
@@ -67,16 +68,22 @@ class PostTest extends CakeTestCase {
 			)
 		));
 		$this->assertTrue((bool)$lastSavedPost);
-		debug($lastSavedPost);
+
+		$this->assertEquals($data['Post'], array_intersect_key($lastSavedPost['Post'], $data['Post']));
 
 		// test that data was saved into tagged_posts
 		$lastSavedTaggedPost = $this->Post->TaggedPost->find('all', array(
 			'conditions' => array(
 				'TaggedPost.post_id' => $this->Post->id
-			)
+			),
+			'order' => array('TaggedPost.tag_id asc')
 		));
+
+		$taggedPostTagIds = hash::extract($lastSavedTaggedPost, '{n}.TaggedPost.tag_id');
+		$TagIds = hash::extract($data, 'Tag.{n}.tag_id');
+
 		$this->assertTrue((bool)$lastSavedTaggedPost);
-		debug($lastSavedTaggedPost);
+		$this->assertEquals($taggedPostTagIds, $TagIds);
 	}
 
 }

@@ -53,7 +53,7 @@ class Post extends AppModel{
 	// 	)
 	// );
 
-	public function saveTags($data, $id) {
+	public function saveTags($data) {
 		$this->create();
 		$this->save($data);
 		if ($this->save($data)) {
