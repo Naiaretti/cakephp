@@ -99,7 +99,7 @@ class PostsController extends AppController {
 						'tag_id' => $tag['tag_id']
 					);
 					$this->Post->TaggedPost->create();
-					$this->Post->TaggedPost->save($tagData);
+					debug($this->Post->TaggedPost->save($tagData)); die;
 				}
 				$this->Session->setFlash(__('Your post has been saved.'));
 				return $this->redirect(array('action' => 'index'));
