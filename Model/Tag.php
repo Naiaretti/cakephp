@@ -8,6 +8,13 @@
 		// 	)
 		// );
 		
+		//public $displayField = 'tag_name';
+		public $order = 'tag_name';
+
+		public $virtualFields = array(
+			'label' => "CONCAT(Tag.id, ' ', Tag.tag_name)"
+		);
+
 		public $hasMany = array(
 			'TaggedPost' => array(
 				'className' => 'TaggedPost',

@@ -1,5 +1,7 @@
 <?php
 	class Comment extends AppModel {
+		public $actsAs = array('Summary');
+
 		public $belongsTo = array('Post', 'Author');
 
 		public $validate = array(
@@ -14,5 +16,10 @@
 				'message' => 'Please choose a post'
 			)
 		);
+
+		public function getTotalComments($id) {
+			$totalComments = $this->find('count', array('conditions' => array('Comment.post_id' => $id)));
+			return $totalComments;
+		}
 	}
 ?>

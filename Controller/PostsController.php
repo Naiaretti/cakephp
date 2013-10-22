@@ -19,7 +19,7 @@ class PostsController extends AppController {
 
 	// lines 21 - 37 is a test of the array merge 'am' function.
 	public function index() {
-		// debug(convertSlash('I_ want to/ see how this/works._'), $showFrom = false);
+		debug(convertSlash('/I want to/ see how this/works./'));
 		$one = array(
 			'one1' => 'first',
 			'one2' => 'second',
@@ -36,6 +36,34 @@ class PostsController extends AppController {
 			'three3' => 'nineth'
 		);
 		pr(am($one, $two, $three), $showHtml = null, $showFrom = true);
+
+		// debug($this->Post->associations());
+
+		// debug("Exists = " . $this->Post->exists('523d6217-e30c-4aaa-95dd-2320307f6222'));
+
+		// Get all models with which this model is associated with based on the type of association passed in as the parameter
+		// debug($this->Post->getAssociated('hasMany'));
+
+		// Check if a field / virtual field exists
+		// debug($this->Post->hasField('postLabel', true));
+
+		// debug($this->Post->find('first', array(
+		// 	'conditions' => array(
+		// 		'Post.id' => '523d6217-e30c-4aaa-95dd-2320307f6222'
+		// 	),
+		// 	'fields' => array(
+		// 		'Post.id'
+		// 	)
+		// )));
+
+		// Check if a field is virtual or not
+		// debug($this->Post->isVirtualField('title'));
+
+		// Get all virtual fields in the Post model
+		// debug($this->Post->getVirtualField());
+
+		// View virtual fields through the find()
+		// debug($this->Post->find('first'));
 
 		$totalPosts = $this->Post->find('count');
 		// $num = 24;
@@ -58,10 +86,13 @@ class PostsController extends AppController {
 	public function view($id = null) {
 
 		if (!$id) {
-			throw new NotFoundException(__('Invalid post'));
+			throw new CakeException(__('Missing Arguements'));
 		}
-		// $test = $this->Post->find('first', array('conditions' => array('Post.id' => $id), 'recursive' => -1));
-		// debug($test);
+
+		if (!$this->Post->exists($id)) {
+			throw new NotFoundException(__('Id Not Found'));
+		}
+
 		$post = $this->Post->find('first', array(
 			'conditions' => array(
 				'Post.id' => $id
@@ -71,7 +102,6 @@ class PostsController extends AppController {
 				'Comment'
 			)
 		));
-		//debug($post); die;
 
 		if (!$post) {
 			throw new NotFoundException(__('Invalid post'));
@@ -90,7 +120,6 @@ class PostsController extends AppController {
 		));
 		$this->set(compact('tags'));
 		if ($this->request->is('post')) {
-			//debug($this->request->data['Tag']); die;
 			$this->Post->create();
 			if ($this->Post->save($this->request->data)) {
 				foreach ($this->request->data['Tag'] as $tag) {
@@ -146,15 +175,23 @@ class PostsController extends AppController {
  * @param  integer $id
  * @return void
  */
-	public function delete($id){
+	public function delete($id) {
 		if ($this->request->is('get')) {
 			throw new MethodNotAllowedException();
 		}
+		
+		if (!$this->Post->exists($id)) {
+			throw new CakeException('Id does not exist');
+
+		}
 
 		if ($this->Post->delete($id)) {
+			$this->Post->transactions($id);
 			$this->Session->setFlash(__('The post with id: %s has been deleted.', h($id)));
 			return $this->redirect(array('action' => 'index'));
 		}
+			$this->Session->setFlash(__('An error occured while trying to delete your post. Please try again.'));
 	}
+
 }
 ?>

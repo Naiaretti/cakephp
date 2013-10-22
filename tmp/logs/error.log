@@ -183,3 +183,23 @@ Stack Trace:
 #3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2013-10-21 16:02:14 Error: Fatal Error (4): syntax error, unexpected T_PUBLIC in [/private/var/www/apps/blogapp/Model/Post.php, line 39]
+2013-10-21 16:02:14 Error: [FatalErrorException] syntax error, unexpected T_PUBLIC
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 39)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 39, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 39, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-21 16:02:51 Error: Fatal Error (4): syntax error, unexpected T_PUBLIC in [/private/var/www/apps/blogapp/Model/Post.php, line 39]
+2013-10-21 16:02:51 Error: [FatalErrorException] syntax error, unexpected T_PUBLIC
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 39)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 39, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 39, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
