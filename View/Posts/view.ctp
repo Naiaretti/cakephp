@@ -45,5 +45,4 @@
 	echo $this->Form->textarea('content');
 	echo $this->Form->hidden('post_id', array('value' => $post['Post']['id']));
 	echo $this->Form->submit('Post Comment');
-	echo $this->Form->end();
 ?>

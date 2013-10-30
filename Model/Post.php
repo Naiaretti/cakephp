@@ -55,7 +55,7 @@ class Post extends AppModel{
 
 	public function saveTags($data) {
 		$this->create();
-		$this->save($data);
+		// $this->save($data);
 		if ($this->save($data)) {
 			foreach ($data['Tag'] as $tag) {
 				$tagData = array(
@@ -65,7 +65,9 @@ class Post extends AppModel{
 				$this->TaggedPost->create();
 				$this->TaggedPost->save($tagData);
 			}
+			return true;
 		}
+		return false;
 	}
 
 	public function transactions($id = null) {

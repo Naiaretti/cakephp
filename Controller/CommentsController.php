@@ -10,7 +10,7 @@ class CommentsController extends AppController {
  */
 	public function add(){
 		if (!$this->request->data) {
-			throw new CakeException('No comment sent');
+			throw new CakeException(__('No comment sent'));
 		}
 
 		$result = $this->Comment->save($this->request->data);
@@ -31,7 +31,7 @@ class CommentsController extends AppController {
 			)
 		));
 		$this->set(compact('post'));
-		$this->request->data = null;
+		// $this->request->data = null;
 		$this->render('/posts/view/');
 	}
 
@@ -53,7 +53,7 @@ class CommentsController extends AppController {
 		if ($this->Comment->delete($id)) {
 			$this->Session->setFlash(__('The comment has been deleted.'));
 		}
-		$this->redirect(array('controller' => 'post', 'action' => 'view/');
+		$this->redirect(array('controller' => 'post', 'action' => 'view/'.$postId);
 	}
 }
 ?>

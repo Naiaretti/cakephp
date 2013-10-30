@@ -121,11 +121,11 @@ class PostsController extends AppController {
 		$this->set(compact('tags'));
 		if ($this->request->is('post')) {
 			// debug($this->request->data); die;
-			if (!$this->Post->saveTags($this->request->data)) {
-				$this->Session->setFlash(__('Unable to add your post.'));
+			if ($this->Post->saveTags($this->request->data)) {
+				$this->Session->setFlash(__('Your post has been saved.'));
+				$this->redirect(array('action' => 'index'));
 			}
-			$this->Session->setFlash(__('Your post has been saved.'));
-			return $this->redirect(array('action' => 'index'));
+			$this->Session->setFlash(__('Unable to add your post.'));
 		}
 	}
 
