@@ -42,7 +42,7 @@ class Post extends AppModel{
 		),
 		'body' => array(
 			'rule' => 'notEmpty',
-			'message' => 'body cannot be empty'
+			'message' => __('The user has been linked to the department',  true) //'body cannot be empty'
 		)
 	);
 
