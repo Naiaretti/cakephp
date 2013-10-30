@@ -711,3 +711,13 @@ Stack Trace:
 #12 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
 #13 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #14 {main}
+2013-10-30 13:54:45 Error: Fatal Error (4): syntax error, unexpected '(', expecting ')' in [/private/var/www/apps/blogapp/Model/Post.php, line 41]
+2013-10-30 13:54:45 Error: [FatalErrorException] syntax error, unexpected '(', expecting ')'
+Request URL: /blogapp/posts
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 41)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 41, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 41, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
