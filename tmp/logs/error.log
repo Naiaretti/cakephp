@@ -27,3 +27,43 @@ Stack Trace:
 #4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
 #5 /private/var/www/apps/blogapp/webroot/index.php(92): include('/private/var/ww...')
 #6 {main}
+2013-11-06 15:37:02 Error: [MissingDatasourceConfigException] The datasource configuration "default" was not found in database.php
+Exception Attributes: array (
+  'config' => 'default',
+)
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/ConnectionManager.php(93): ConnectionManager::_getConnectionObject('default')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3225): ConnectionManager::getDataSource('default')
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('posts')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2799): Model->getDataSource()
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2736): Model->_findCount('before', Array)
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2695): Model->buildQuery('count', Array)
+#7 /private/var/www/apps/blogapp/Controller/PostsController.php(21): Model->find('count')
+#8 [internal function]: PostsController->index()
+#9 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#10 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#12 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-11-06 15:37:07 Error: [MissingDatasourceConfigException] The datasource configuration "default" was not found in database.php
+Exception Attributes: array (
+  'config' => 'default',
+)
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/ConnectionManager.php(93): ConnectionManager::_getConnectionObject('default')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3225): ConnectionManager::getDataSource('default')
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('posts')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2799): Model->getDataSource()
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2736): Model->_findCount('before', Array)
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2695): Model->buildQuery('count', Array)
+#7 /private/var/www/apps/blogapp/Controller/PostsController.php(21): Model->find('count')
+#8 [internal function]: PostsController->index()
+#9 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#10 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#12 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
