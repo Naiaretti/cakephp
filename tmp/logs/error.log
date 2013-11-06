@@ -67,3 +67,29 @@ Stack Trace:
 #11 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
 #12 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+2013-11-06 15:40:24 Error: [MissingTableException] Table post_summaries for model PostSummary was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'post_summaries',
+  'class' => 'PostSummary',
+  'ds' => 'default',
+)
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('post_summaries')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1318): Model->getDataSource()
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1193): Model->schema()
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1156): Model->_setAliasData(Array)
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1632): Model->set(Array)
+#5 /private/var/www/apps/blogapp/Model/Behavior/SummaryBehavior.php(24): Model->save(Array)
+#6 [internal function]: SummaryBehavior->afterSave(Object(Comment), true, Array)
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 /private/var/www/frameworks/cakephp/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1773): CakeEventManager->dispatch(Object(CakeEvent))
+#11 /private/var/www/apps/blogapp/Controller/CommentsController.php(16): Model->save(Array)
+#12 [internal function]: CommentsController->add()
+#13 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#14 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#15 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest), Object(CakeResponse))
+#16 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#17 {main}
