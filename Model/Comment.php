@@ -2,7 +2,7 @@
 	class Comment extends AppModel {
 		public $actsAs = array('Summary');
 
-		public $belongsTo = array('Post', 'Author');
+		public $belongsTo = array('Post');
 
 		public $validate = array(
 			'content' => array(

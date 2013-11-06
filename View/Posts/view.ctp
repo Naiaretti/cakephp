@@ -1,8 +1,9 @@
 <!-- File: app\View\Posts\view.ctp -->
 <?php
-	//debug($this->request->params)
-	//debug($post['Comment']['0']['id']);
+	// debug($this->request->params);
+	// debug($post['Comment']['0']['id']);
 	// debug($post);
+	// debug($post['Comment']);
 	echo $this->element('return');
 ?>
 <h1><?php echo h($post['Post']['title']); ?></h1>
@@ -45,4 +46,5 @@
 	echo $this->Form->textarea('content');
 	echo $this->Form->hidden('post_id', array('value' => $post['Post']['id']));
 	echo $this->Form->submit('Post Comment');
+	echo $this->Form->end();
 ?>

@@ -13,13 +13,6 @@ class CommentsController extends AppController {
 			throw new CakeException(__('No comment sent'));
 		}
 
-		$result = $this->Comment->save($this->request->data);
-		if ($result) {
-			echo $this->Session->setFlash(__('Your comment has been posted.'));
-		}else{
-			echo $this->Session->setFlash(__('Comment was not saved'));
-		}
-
 		//find me the exact post that has same id as the post_id of the comment
 		$post = $this->Comment->Post->find('first', array(
 			'conditions' => array(
@@ -30,8 +23,16 @@ class CommentsController extends AppController {
 				'TaggedPost'
 			)
 		));
+		
+		$result = $this->Comment->save($this->request->data);
+		if ($result) {
+			echo $this->Session->setFlash(__('Your comment has been posted.'));
+		} else {
+			echo $this->Session->setFlash(__('Comment was not saved'));
+		}
+
 		$this->set(compact('post'));
-		// $this->request->data = null;
+		$this->request->data = null;
 		$this->render('/posts/view/');
 	}
 

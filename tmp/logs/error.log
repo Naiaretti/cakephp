@@ -921,3 +921,152 @@ Stack Trace:
 #3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2013-11-06 13:56:02 Error: Fatal Error (4): syntax error, unexpected '(', expecting ')' in [/private/var/www/apps/blogapp/Model/Post.php, line 45]
+2013-11-06 13:56:02 Error: [FatalErrorException] syntax error, unexpected '(', expecting ')'
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 45)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 45, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 45, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 13:57:40 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 56]
+2013-11-06 13:57:40 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 56, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 56, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:01:27 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 57]
+2013-11-06 14:01:27 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:01:48 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 57]
+2013-11-06 14:01:48 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:05:40 Error: [NotFoundException] Id Not Found
+Request URL: /blogapp/posts/view/527a4ac0-8ba0-4202-b57d-0785b47db738
+Stack Trace:
+#0 [internal function]: PostsController->view('527a4ac0-8ba0-4...')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#4 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-11-06 14:21:02 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 57]
+2013-11-06 14:21:02 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:23:52 Error: Fatal Error (4): syntax error, unexpected T_ECHO in [/private/var/www/apps/blogapp/View/Posts/view.ctp, line 6]
+2013-11-06 14:23:52 Error: [FatalErrorException] syntax error, unexpected T_ECHO
+Request URL: /blogapp/posts/view/527a4d4a-d668-475f-a730-27f1b47db738
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 6, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 6, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:24:08 Error: Fatal Error (4): syntax error, unexpected T_ECHO in [/private/var/www/apps/blogapp/View/Posts/view.ctp, line 6]
+2013-11-06 14:24:08 Error: [FatalErrorException] syntax error, unexpected T_ECHO
+Request URL: /blogapp/posts/view/527a4d4a-d668-475f-a730-27f1b47db738
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 6)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 6, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 6, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:40:18 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 57]
+2013-11-06 14:40:18 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:43:24 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 56]
+2013-11-06 14:43:24 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 56, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 56, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:44:40 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 56]
+2013-11-06 14:44:40 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 56, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 56, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:46:28 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 57]
+2013-11-06 14:46:28 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:46:35 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 57]
+2013-11-06 14:46:35 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:46:36 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 57]
+2013-11-06 14:46:36 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-11-06 14:46:36 Error: Fatal Error (4): syntax error, unexpected ';' in [/private/var/www/apps/blogapp/Controller/CommentsController.php, line 57]
+2013-11-06 14:46:36 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/private/var/ww...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/private/var/ww...', 57, Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

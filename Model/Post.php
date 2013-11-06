@@ -42,7 +42,7 @@ class Post extends AppModel{
 		),
 		'body' => array(
 			'rule' => 'notEmpty',
-			'message' => __('The user has been linked to the department',  true) //'body cannot be empty'
+			'message' => 'Please type in a post' //'body cannot be empty'
 		)
 	);
 
@@ -70,65 +70,65 @@ class Post extends AppModel{
 		return false;
 	}
 
-	public function transactions($id = null) {
-		$dataSource = $this->getDataSource();
-		$success = true;
-		$dataSource->begin();
+// 	public function transactions($id = null) {
+// 	$dataSource = $this->getDataSource();
+// 	$success = true;
+// 	$dataSource->begin();
 
-		$result = $this->delete($id);
-		if (!$result) {
-			$success = false;
-		}
+// 	$result = $this->delete($id);
+// 	if (!$result) {
+// 		$success = false;
+// 	}
 
-		$comments = $this->Comment->find('all', array(
-			'conditions' => array('Comment.post_id' => $id)
-		));
+// 	$comments = $this->Comment->find('all', array(
+// 		'conditions' => array('Comment.post_id' => $id)
+// 	));
+	
+// 	$Summary = ClassRegistry::init('PostSummary');
+// 	foreach ($comments as $comment) {
+// 		// check if this comment exists in the postSUmmary table and delete it
 		
-		$Summary = ClassRegistry::init('PostSummary');
-		foreach ($comments as $comment) {
-			// check if this comment exists in the postSUmmary table and delete it
-			
-			$postSummaryId = $Summary->find('first', array(
-				'conditions' => array(
-					'PostSummary.foreign_key' => $comment['Comment']['id'],
-					'PostSummary.model' => $this->Comment->alias
-				),
-				'fields' => array(
-					'PostSummary.id'
-				)
-			));
-			if ($postSummaryId) {
-				$deleteSummary = $Summary->delete($postSummaryId['PostSummary']['id']);
-				if (!$deleteSummary) {
-					$success = false;
-				}
-			}
-			// check if delete was not sucessful, then rollback
-			$deleted = $this->Comment->delete($comment['Comment']['id']);
-			if (!$deleted) {
-				$success = false;
-			}
-		}
+// 		$postSummaryId = $Summary->find('first', array(
+// 			'conditions' => array(
+// 				'PostSummary.foreign_key' => $comment['Comment']['id'],
+// 				'PostSummary.model' => $this->Comment->alias
+// 			),
+// 			'fields' => array(
+// 				'PostSummary.id'
+// 			)
+// 		));
+// 		if ($postSummaryId) {
+// 			$deleteSummary = $Summary->delete($postSummaryId['PostSummary']['id']);
+// 			if (!$deleteSummary) {
+// 				$success = false;
+// 			}
+// 		}
+// 		// check if delete was not sucessful, then rollback
+// 		$deleted = $this->Comment->delete($comment['Comment']['id']);
+// 		if (!$deleted) {
+// 			$success = false;
+// 		}
+// 	}
 
-		$summaries = $Summary->find('first', array(
-			'conditions' => array(
-				'PostSummary.foreign_key' => $id,
-				'PostSummary.model' => $this->alias
-			),
-			'fields' => array(
-				'PostSummary.id'
-			)
-		)); debug($summaries); die;
-		// debug($id); die;
-		$delete = $Summary->delete($summaries['PostSummary']['id']);
-		if (!$delete) {
-			$success = false;
-			debug('success = false'); die;
-		}
-		if (!$success) {
-			$dataSource->rollback();
-		}
-		$dataSource->commit();
-	}
+// 	$summaries = $Summary->find('first', array(
+// 		'conditions' => array(
+// 			'PostSummary.foreign_key' => $id,
+// 			'PostSummary.model' => $this->alias
+// 		),
+// 		'fields' => array(
+// 			'PostSummary.id'
+// 		)
+// 	)); debug($summaries); die;
+// 	// debug($id); die;
+// 	$delete = $Summary->delete($summaries['PostSummary']['id']);
+// 	if (!$delete) {
+// 		$success = false;
+// 		debug('success = false'); die;
+// 	}
+// 	if (!$success) {
+// 		$dataSource->rollback();
+// 	}
+// 	$dataSource->commit();
+// }
 }
 ?>
