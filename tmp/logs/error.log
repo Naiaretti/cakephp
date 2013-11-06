@@ -18,3 +18,69 @@ Stack Trace:
 #11 /private/var/www/apps/blogapp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
 #12 /private/var/www/apps/blogapp/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+2013-11-06 16:29:27 Error: [MissingDatasourceConfigException] The datasource configuration "sample" was not found in database.php
+Exception Attributes: array (
+  'config' => 'sample',
+)
+Request URL: /blogapp/comments/add
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/ConnectionManager.php(93): ConnectionManager::_getConnectionObject('sample')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3225): ConnectionManager::getDataSource('sample')
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1107): Model->setDataSource('sample')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('summaries')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1318): Model->getDataSource()
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1193): Model->schema()
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1156): Model->_setAliasData(Array)
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1632): Model->set(Array)
+#8 /private/var/www/apps/blogapp/Model/Behavior/SummaryBehavior.php(24): Model->save(Array)
+#9 [internal function]: SummaryBehavior->afterSave(Object(Comment), true, Array)
+#10 /private/var/www/frameworks/cakephp/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#11 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#12 /private/var/www/frameworks/cakephp/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#13 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1773): CakeEventManager->dispatch(Object(CakeEvent))
+#14 /private/var/www/apps/blogapp/Controller/CommentsController.php(16): Model->save(Array)
+#15 [internal function]: CommentsController->add()
+#16 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#17 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#18 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest), Object(CakeResponse))
+#19 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#20 {main}
+2013-11-06 16:36:24 Error: [MissingTableException] Table authors for model Author was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'authors',
+  'class' => 'Author',
+  'ds' => 'default',
+)
+Request URL: /blogapp/comments/delete/527a6e67-40f8-4cca-b631-32db307f6222/527a4d4a-d668-475f-a730-27f1b47db738
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('authors')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/Datasource/DboSource.php(1974): Model->getDataSource()
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Datasource/Database/Mysql.php(402): DboSource->_getJoins(Object(Comment))
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2431): Mysql->delete(Object(Comment), Array)
+#4 /private/var/www/apps/blogapp/Controller/CommentsController.php(53): Model->delete('527a6e67-40f8-4...')
+#5 [internal function]: CommentsController->delete('527a6e67-40f8-4...', '527a4d4a-d668-4...')
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(CommentsController), Array)
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#8 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(CommentsController), Object(CakeRequest), Object(CakeResponse))
+#9 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2013-11-06 16:38:49 Error: [MissingTableException] Table authors for model Author was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'authors',
+  'class' => 'Author',
+  'ds' => 'default',
+)
+Request URL: /blogapp/posts/delete/527a4d4a-d668-475f-a730-27f1b47db738
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('authors')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/Datasource/DboSource.php(1974): Model->getDataSource()
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Datasource/Database/Mysql.php(402): DboSource->_getJoins(Object(Comment))
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2431): Mysql->delete(Object(Comment), Array)
+#4 /private/var/www/apps/blogapp/Model/Post.php(83): Model->delete('527a62e8-2754-4...')
+#5 /private/var/www/apps/blogapp/Controller/PostsController.php(166): Post->transactions('527a4d4a-d668-4...')
+#6 [internal function]: PostsController->delete('527a4d4a-d668-4...')
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#8 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#9 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#10 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#11 {main}
