@@ -18,3 +18,12 @@ Stack Trace:
 #11 /private/var/www/apps/blogapp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
 #12 /private/var/www/apps/blogapp/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #13 {main}
+2013-11-06 15:34:53 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/apps/blogapp/webroot/index.php(92): include('/private/var/ww...')
+#6 {main}
