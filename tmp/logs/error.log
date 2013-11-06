@@ -1,0 +1,138 @@
+2013-11-06 15:56:06 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[42000] [1049] Unknown database \'blod_db\'',
+  'enabled' => true,
+)
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3225): ConnectionManager::getDataSource('default')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('posts')
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2799): Model->getDataSource()
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2736): Model->_findCount('before', Array)
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2695): Model->buildQuery('count', Array)
+#8 /private/var/www/apps/blogapp/Controller/PostsController.php(21): Model->find('count')
+#9 [internal function]: PostsController->index()
+#10 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#11 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#12 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#13 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-11-06 15:56:07 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[42000] [1049] Unknown database \'blod_db\'',
+  'enabled' => true,
+)
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3225): ConnectionManager::getDataSource('default')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('posts')
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2799): Model->getDataSource()
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2736): Model->_findCount('before', Array)
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2695): Model->buildQuery('count', Array)
+#8 /private/var/www/apps/blogapp/Controller/PostsController.php(21): Model->find('count')
+#9 [internal function]: PostsController->index()
+#10 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#11 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#12 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#13 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-11-06 15:56:48 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[42000] [1049] Unknown database \'blod_db\'',
+  'enabled' => true,
+)
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3225): ConnectionManager::getDataSource('default')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('posts')
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2799): Model->getDataSource()
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2736): Model->_findCount('before', Array)
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2695): Model->buildQuery('count', Array)
+#8 /private/var/www/apps/blogapp/Controller/PostsController.php(21): Model->find('count')
+#9 [internal function]: PostsController->index()
+#10 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#11 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#12 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#13 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-11-06 15:57:48 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[42000] [1049] Unknown database \'blod_db\'',
+  'enabled' => true,
+)
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3225): ConnectionManager::getDataSource('default')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('posts')
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2799): Model->getDataSource()
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2736): Model->_findCount('before', Array)
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2695): Model->buildQuery('count', Array)
+#8 /private/var/www/apps/blogapp/Controller/PostsController.php(21): Model->find('count')
+#9 [internal function]: PostsController->index()
+#10 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#11 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#12 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#13 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-11-06 15:57:59 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[42000] [1049] Unknown database \'blod_db\'',
+  'enabled' => true,
+)
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3225): ConnectionManager::getDataSource('default')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('posts')
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2799): Model->getDataSource()
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2736): Model->_findCount('before', Array)
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2695): Model->buildQuery('count', Array)
+#8 /private/var/www/apps/blogapp/Controller/PostsController.php(21): Model->find('count')
+#9 [internal function]: PostsController->index()
+#10 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#11 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#12 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#13 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-11-06 15:58:17 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[42000] [1049] Unknown database \'blod_db\'',
+  'enabled' => true,
+)
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3225): ConnectionManager::getDataSource('default')
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(3247): Model->setSource('posts')
+#5 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2799): Model->getDataSource()
+#6 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2736): Model->_findCount('before', Array)
+#7 /private/var/www/frameworks/cakephp/lib/Cake/Model/Model.php(2695): Model->buildQuery('count', Array)
+#8 /private/var/www/apps/blogapp/Controller/PostsController.php(21): Model->find('count')
+#9 [internal function]: PostsController->index()
+#10 /private/var/www/frameworks/cakephp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#11 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#12 /private/var/www/frameworks/cakephp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#13 /private/var/www/apps/blogapp/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
