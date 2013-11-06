@@ -1,0 +1,48 @@
+2013-11-06 15:42:33 Error: [MissingDatasourceConfigException] The datasource configuration "default" was not found in database.php
+Exception Attributes: array (
+  'config' => 'default',
+)
+Request URL: /blogapp/
+Stack Trace:
+#0 /private/var/www/apps/blogapp/lib/Cake/Model/ConnectionManager.php(93): ConnectionManager::_getConnectionObject('default')
+#1 /private/var/www/apps/blogapp/lib/Cake/Model/Model.php(3288): ConnectionManager::getDataSource('default')
+#2 /private/var/www/apps/blogapp/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#3 /private/var/www/apps/blogapp/lib/Cake/Model/Model.php(3310): Model->setSource('posts')
+#4 /private/var/www/apps/blogapp/lib/Cake/Model/Model.php(1318): Model->getDataSource()
+#5 /private/var/www/apps/blogapp/lib/Cake/Model/Model.php(1401): Model->schema()
+#6 /private/var/www/apps/blogapp/lib/Cake/Controller/Component/PaginatorComponent.php(394): Model->hasField('created')
+#7 /private/var/www/apps/blogapp/lib/Cake/Controller/Component/PaginatorComponent.php(144): PaginatorComponent->validateSort(Object(Post), Array, Array)
+#8 /private/var/www/apps/blogapp/app/Controller/PostsController.php(23): PaginatorComponent->paginate('Post')
+#9 [internal function]: PostsController->index()
+#10 /private/var/www/apps/blogapp/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PostsController), Array)
+#11 /private/var/www/apps/blogapp/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#12 /private/var/www/apps/blogapp/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PostsController), Object(CakeRequest), Object(CakeResponse))
+#13 /private/var/www/apps/blogapp/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-11-06 15:44:17 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/apps/blogapp/webroot/index.php(92): include('/private/var/ww...')
+#6 {main}
+2013-11-06 15:45:57 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/apps/blogapp/webroot/index.php(92): include('/private/var/ww...')
+#6 {main}
+2013-11-06 15:45:58 Error: [CakeLogException] Could not load class File
+Stack Trace:
+#0 /private/var/www/frameworks/cakephp/lib/Cake/Log/LogEngineCollection.php(42): LogEngineCollection::_getLogger('File')
+#1 /private/var/www/frameworks/cakephp/lib/Cake/Log/CakeLog.php(199): LogEngineCollection->load('debug', Array)
+#2 /private/var/www/apps/blogapp/Config/bootstrap.php(104): CakeLog::config('debug', Array)
+#3 /private/var/www/frameworks/cakephp/lib/Cake/Core/Configure.php(94): include('/private/var/ww...')
+#4 /private/var/www/frameworks/cakephp/lib/Cake/bootstrap.php(171): Configure::bootstrap(true)
+#5 /private/var/www/apps/blogapp/webroot/index.php(92): include('/private/var/ww...')
+#6 {main}
